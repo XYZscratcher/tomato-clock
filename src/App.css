@@ -1,0 +1,52 @@
+/*@font-face {
+    font-family: "Digital Numbers";
+    src: url("./assets/DigitalNumbers-Regular.ttf");
+}*/
+#show_time {
+  font-family: sans-serif;
+  /*font-family: 'Digital Numbers';*/
+  font-weight: 100;
+  font-size: 3rem;
+  line-height: 0.5;
+}
+
+#time_btn {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  border: 3px solid red;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+progress {
+  appearance: none;
+  margin-block: 1rem;
+  width: 90%;
+  height: 1.5rem;
+}
+
+::-webkit-progress-value {
+  border-radius: 400px;
+  font-size: 0.2px;
+    background-image: repeating-linear-gradient(-45deg,
+        hsl(0, 90%, 27%),
+        hsl(0, 90%, 27%) 20em,
+        red 20em,
+        red 50em);
+    /* 包括多个色标长度 */
+    background-image: repeating-linear-gradient(-45deg,
+        hsl(0, 90%, 27%) 0 20em,
+        red 20em 50em);
+}
+::-webkit-progress-bar{
+  overflow: hidden;
+  border-radius: 400px;
+  background-color: white;
+}
+::-webkit-progress-inner-element{
+  border-radius: 400px;
+  border: 2px solid gray;
+}

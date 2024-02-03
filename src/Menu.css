@@ -1,0 +1,35 @@
+.window {
+    border: unset;
+    transition: unset;
+    padding: 0.3em 0.6em;
+    background-color: transparent;
+    box-shadow: unset;
+    border-radius: 0;
+    font-size: 1.2rem;
+    transition: color 0.2s ease-in;
+}
+
+#minimize:hover {
+    color: hsl(212, 100%, 39%);
+}
+
+#close:hover {
+    color: red;
+}
+nav{
+    margin-top: 2rem;
+    display: flex;
+}
+
+#title {
+    display: inline-block;
+    margin: auto;
+    position: absolute;
+    right: 128px;
+    top: 18px;
+    font-size: 1.2rem;
+    color: hsl(212, 100%, 39%);
+}
+.c{
+    height: 294px;
+}
