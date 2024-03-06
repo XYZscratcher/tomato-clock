@@ -1,9 +1,35 @@
-import { Outlet,Link } from "react-router-dom";
-import {appWindow,LogicalSize} from "@tauri-apps/api/window";
+import { Outlet, Link } from "react-router-dom";
+import { appWindow, LogicalSize } from "@tauri-apps/api/window";
+
+//import localforage from "localforage";
+
 import "./Menu.css"
+
 appWindow.setDecorations(false);
-appWindow.setSize(new LogicalSize(400,500));
+appWindow.setSize(new LogicalSize(400, 500));
 appWindow.setResizable(false);
+
+//localforage.clear()
+/*localforage.keys().then((v)=>{
+    console.log(v)
+    if(v.indexOf("work")===-1){
+        localforage.setItem("work",25);
+        localforage.setItem("rest",5);
+        localforage.setItem("round",4);
+    }
+}).catch((e)=>console.log(e))*/
+if (localStorage.length === 0) {
+    localStorage.setItem("work", "25");
+    localStorage.setItem("rest", "5");
+    localStorage.setItem("round", "4");
+}
+localStorage.setItem("timer", "25");
+
+//TODO:创建一个被App.tsx调用的函数，使得计时器在“后台”继续计时
+function timerInBack() {
+
+}
+
 const home =
     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" /></svg>
 const settings =
@@ -11,30 +37,31 @@ const settings =
 const info =
     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" /></svg>
 
-function Tab(props:React.ComponentProps<any>) {
-    return(
+function Tab(props: React.ComponentProps<any>) {
+    return (
         <div style={{ flex: "auto", textAlign: "center" }}>
-            <Link to={"/"+props.href}>{props.children}</Link>
+            <Link to={"/" + props.href}>{props.children}</Link>
         </div>
     )
 }
+
 function Menu() {
     //TODO:
-    return (<>   
-    <div style={{textAlign:"right"}}>    
-            <span id="title">tomato-clock</span>       
+    return (<>
+        <div style={{ textAlign: "right" }}>
+            <span id="title">小巧番茄钟</span>
             <button onClick={() => { appWindow.minimize(); }} className="window" id="minimize">─</button>
-        <button onClick={() => { appWindow.close(); }} className="window" id="close">✖</button>
-    </div>
-    <div className="container">
-        <Outlet />
+            <button onClick={() => { appWindow.close(); }} className="window" id="close">✖</button>
+        </div>
+        <div className="container">
+            <Outlet />
         </div>
         {/*<Link to="/">🏠</Link><Link to="/about">ℹ</Link>*/}
         <div id="footer">
-        <nav>
-            {[["settings",settings],["",home],["about",info]].map((v)=><Tab href={v[0]}>{v[1]}</Tab>)}
+            <nav>
+                {[["settings", settings], ["", home], ["about", info]].map((v) => <Tab href={v[0]}>{v[1]}</Tab>)}
             </nav></div>
     </>
     )
 }
-export default Menu;
+export { Menu, timerInBack };

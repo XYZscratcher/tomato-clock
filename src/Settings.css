@@ -3,3 +3,7 @@
     background-color: rgba(202, 213, 216,0.3);
     padding-block: 0.1rem;
 }
+.semi-slider-handle{
+    width: 18px;
+    height: 18px;
+}

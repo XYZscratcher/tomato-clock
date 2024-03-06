@@ -31,15 +31,26 @@ progress {
 ::-webkit-progress-value {
   border-radius: 400px;
   font-size: 0.2px;
+}
+.work::-webkit-progress-value{
     background-image: repeating-linear-gradient(-45deg,
-        hsl(0, 90%, 27%),
-        hsl(0, 90%, 27%) 20em,
-        red 20em,
-        red 50em);
-    /* 包括多个色标长度 */
+          hsl(0, 90%, 27%),
+          hsl(0, 90%, 27%) 20em,
+          red 20em,
+          red 50em);
+      /* 包括多个色标长度 */
+      background-image: repeating-linear-gradient(-45deg,
+          hsl(0, 90%, 27%) 0 20em,
+          red 20em 50em);
+}
+.rest::-webkit-progress-value{
     background-image: repeating-linear-gradient(-45deg,
-        hsl(0, 90%, 27%) 0 20em,
-        red 20em 50em);
+          hsl(247, 88%, 27%),
+          hsl(247, 88%, 27%) 20em,
+          blue 20em,
+          blue 50em);
+      /* 包括多个色标长度 */
+    background-image: repeating-linear-gradient(-45deg, hsl(195.97deg 85.97% 51.22%) 0 20em, #0d779a 20em 50em)
 }
 ::-webkit-progress-bar{
   overflow: hidden;

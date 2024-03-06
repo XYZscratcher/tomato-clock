@@ -6,8 +6,8 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "tomato-clock",
-    "version": "0.1.0"
+    "productName": "小巧番茄钟",
+    "version": "1.0.0"
   },
   "tauri": {
     "allowlist": {
@@ -27,7 +27,12 @@
         "icons/128x128@2x.png",
         "icons/icon.icns",
         "icons/icon.ico"
-      ]
+      ],
+      "windows":{
+        "wix": {
+          "language": "zh-CN"
+        }
+      }
     },
     "security": {
       "csp": null
@@ -39,6 +44,7 @@
         "title": "tomato-clock",
         "width": 800,
         "height": 600
+        
       }
     ]
   }

@@ -1,10 +1,10 @@
-const VER = "v0.1.0"
+const VER = "v1.0.0"
 function About() {
     return (
         <>
-            <h1>About</h1>
-            <p>Author: me</p>
-            <p>Version: {VER}</p>
+            <h1>关于</h1>
+            <p>作者：林峻铭</p>
+            <p>版本：{VER}</p>
         </>
     )
 }

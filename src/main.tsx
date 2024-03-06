@@ -10,8 +10,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import { Menu } from "./Menu";
 import App from "./App";
-import Menu from "./Menu";
+
 import ErrorPage from "./ErrorPage";
 import About from "./About";
 import "./styles.css";
